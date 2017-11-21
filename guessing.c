@@ -1,21 +1,20 @@
 #include <stdio.h>
 
-#define GUESSING_NUMBER 5
-
 int main(){
-  printf("************************************\n");
+  printf("********************************\n");
   printf("* Bem vindo ao jogo do palpite *\n");
-  printf("************************************\n");
+  printf("********************************\n");
 
   int secretNumber = 42;
 
-  int guess;
+  int guess = 0;
+  int guessing_number = 1;
 
-  for (int i = 1; i <= GUESSING_NUMBER; i++) {
+  while(1){
 
     printf("\n");
 
-    printf("Tentativa %d de %d", i, GUESSING_NUMBER);
+    printf("Tentativa %d", guessing_number);
 
     printf("\n");
     printf("\n");
@@ -31,7 +30,6 @@ int main(){
       printf("\n");
       printf("O palpite deve ser um número positivo.");
       printf("\n");
-      i--;
       continue;
     }
 
@@ -58,11 +56,15 @@ int main(){
       printf("Tente novamente!");
       printf("\n");
     }
+
+    guessing_number++;
   }
 
   printf("\n");
   printf("\n");
   printf("Fim do jogo!");
+  printf("\n");
+  printf("Total de tentativas %d", guessing_number);
   printf("\n");
 
 }
