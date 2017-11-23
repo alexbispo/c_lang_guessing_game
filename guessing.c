@@ -1,14 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
   printf("********************************\n");
   printf("* Bem vindo ao jogo do palpite *\n");
   printf("********************************\n");
 
-  int secretNumber = 42;
+  srand(time(0));
+  int secretNumber = rand() % 100;
 
   int guess = 0;
   int guessing_number = 1;
+  double score = 1000;
 
   while(1){
 
@@ -57,6 +60,9 @@ int main(){
       printf("\n");
     }
 
+    double lostScore = (abs(guess - secretNumber) / (double)2);
+    score = score - lostScore; 
+
     guessing_number++;
   }
 
@@ -65,6 +71,8 @@ int main(){
   printf("Fim do jogo!");
   printf("\n");
   printf("Total de tentativas %d", guessing_number);
+  printf("\n");
+  printf("Total de pontos %.1f", score);
   printf("\n");
 
 }

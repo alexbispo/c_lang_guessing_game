@@ -1,3 +1,5 @@
 *.out
 ex*
 hello.c
+calc.c
+tabuada.c
